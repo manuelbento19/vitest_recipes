@@ -1,4 +1,4 @@
-import {describe,it,expect, beforeEach} from 'vitest'
+import {describe,it,expect} from 'vitest'
 import {render, screen} from '@testing-library/react'
 import { Greating } from '../components/greating'
 
@@ -8,13 +8,13 @@ describe('Greating', () => {
 
         const title = screen.getByRole("heading");
         expect(title).toBeDefined()
-        expect(title.innerText).toBe("Hello, Manuel")
+        expect(title.innerHTML).toBe("Hello, Manuel")
     })
     it("should render without username",()=>{
         render(<Greating />)
 
         const title = screen.getByRole("heading");
         expect(title).toBeDefined()
-        expect(title.innerText).toBe("Hello, Stranger")
+        expect(title.innerHTML).toBe("Hello, Stranger")
     })
 })
